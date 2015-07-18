@@ -6,7 +6,7 @@
 		<artifactId>projeto-maven-java</artifactId>
 		<version>1.0</version>
 	</parent>
-	<artifactId>projeto-maven-java8</artifactId>
+	<artifactId>config-maven-java8</artifactId>
 	<packaging>pom</packaging>
 	<name>Porjeto com configurações de compilação JavaEE7 - Java 8</name>
 	<build>
