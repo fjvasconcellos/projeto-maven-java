@@ -418,6 +418,7 @@
 									versão ${project.version}!</message>
 								<server>github</server>
 								<outputDirectory>${project.site.stageDirectory}</outputDirectory>
+								<merge>true</merge>
 							</configuration>
 						</plugin>
 					</plugins>
