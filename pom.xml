@@ -330,7 +330,7 @@
 		<module>config-maven-java6</module>
 		<module>config-maven-java7</module>
 		<module>config-maven-java8</module>
-		<module>git-site-publish</module>
+		<module>projeto-maven-git-publish</module>
 	</modules>
 	<url>http://fjvasconcellos.github.io/projeto-maven-java</url>
 	<distributionManagement>
