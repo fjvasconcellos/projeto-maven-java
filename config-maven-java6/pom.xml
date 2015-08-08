@@ -9,6 +9,11 @@
 	<artifactId>config-maven-java6</artifactId>
 	<packaging>pom</packaging>
 	<name>Porjeto com configurações de compilação JavaEE6</name>
+	<scm>
+		<url>https://github.com/fjvasconcellos/projeto-maven-java</url>
+		<connection>scm:git:git://github.com/fjvasconcellos/projeto-maven-java.git</connection>
+		<developerConnection>scm:git:git://github.com:fjvasconcellos/projeto-maven-java.git</developerConnection>
+	</scm>
 	<build>
 		<plugins><!-- Define o compilador padrão dos projetos -->
 			<plugin>
@@ -146,46 +151,6 @@
 			</resource>
 		</resources>
 	</build>
-	<profiles>
-		<profile>
-			<id>deploy-versao</id>
-			<build>
-				<plugins>
-					<!-- Adicionar JavaDoc dos projetos -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>deploy-javadoc</id>
-								<phase>install</phase>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-								<inherited>true</inherited>
-							</execution>
-						</executions>
-					</plugin>
-
-					<!-- Adicionar JavaSources dos projetos. -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>deploy-sources</id>
-								<phase>install</phase>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-								<inherited>true</inherited>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -200,4 +165,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<url>http://fjvasconcellos.github.io/projeto-maven-java/config-maven-java6</url>
 </project>
