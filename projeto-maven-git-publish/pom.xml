@@ -50,4 +50,5 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
+	<name>GIT - Pom Publicação</name>
 </project>
