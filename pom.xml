@@ -324,7 +324,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
-		<project.site.stageDirectory>C:\Felipe_Vasconcellos\java\Ambiente\projetos\workspace\projeto-maven-java\target\staging</project.site.stageDirectory>
+		<project.site.stageDirectory>/home/felipe-vasconcellos/Ambiente/projetos/vsoftware/projeto-maven-java/target/staging</project.site.stageDirectory>
 	</properties>
 	<modules>
 		<module>config-maven-java6</module>
