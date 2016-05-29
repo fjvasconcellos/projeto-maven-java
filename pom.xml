@@ -329,9 +329,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
-        <project.site.stageDirectory>
-            /home/felipe-vasconcellos/Ambiente/projetos/vsoftware/projeto-maven-java/target/staging
-        </project.site.stageDirectory>
+        <project.site.stageDirectory>C:\Ambiente\projetos\projeto-maven-java\target\staging</project.site.stageDirectory>
     </properties>
     <modules>
         <module>config-maven-java6</module>
@@ -347,6 +345,30 @@
             <url>scp://fjvasconcellos.github.io/projeto-maven-java</url>
         </site>
     </distributionManagement>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <configuration>
+                    <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+                    <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
     <profiles>
         <profile>
             <id>deploy-versao</id>
@@ -366,7 +388,7 @@
                                     <id>deploy-javadoc</id>
                                     <phase>package</phase>
                                     <goals>
-                                        <goal>javadoc-no-fork</goal>
+                                        <goal>jar</goal>
                                     </goals>
                                 </execution>
                             </executions>
@@ -392,37 +414,14 @@
                             <configuration>
                                 <locales>pt_BR,en_US</locales>
                                 <stagingDirectory>${project.site.stageDirectory}</stagingDirectory>
-                                <reportPlugins>
-                                    <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-project-info-reports-plugin</artifactId>
-                                        <configuration>
-                                            <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                                            <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                                        </configuration>
-                                    </plugin>
-                                    <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-javadoc-plugin</artifactId>
-                                    </plugin>
-                                    <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-surefire-report-plugin</artifactId>
-                                    </plugin>
-                                    <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-checkstyle-plugin</artifactId>
-                                    </plugin>
-                                </reportPlugins>
                             </configuration>
                         </plugin>
                         <plugin>
                             <groupId>com.github.github</groupId>
                             <artifactId>site-maven-plugin</artifactId>
                             <configuration>
-                                <message>Criação do Site para o Projeto: ${project.artifactId}
-                                    na
-                                    versão ${project.version}!
+                                <message>Criação do Site para o Projeto: ${project.artifactId} na versão
+                                    ${project.version}!
                                 </message>
                                 <server>github</server>
                                 <outputDirectory>${project.site.stageDirectory}</outputDirectory>
