@@ -7,9 +7,6 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>Projeto de Configuração Maven para JAVA</name>
-    <prerequisites>
-        <maven>3.3</maven>
-    </prerequisites>
     <scm>
         <url>https://github.com/fjvasconcellos/projeto-maven-java</url>
         <connection>scm:git:git://github.com/fjvasconcellos/projeto-maven-java.git</connection>
@@ -62,6 +59,21 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>3.0.0-M1</version>
+                    <executions>
+                      <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                          <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                          <rules>
+                            <requireMavenVersion>
+                              <version>3.5</version>
+                            </requireMavenVersion>
+                          </rules>    
+                        </configuration>
+                      </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -335,6 +347,7 @@
         <module>config-maven-java6</module>
         <module>config-maven-java7</module>
         <module>config-maven-java8</module>
+        <module>config-maven-java9</module>
         <module>projeto-maven-git-publish</module>
     </modules>
     <url>http://fjvasconcellos.github.io/projeto-maven-java</url>
@@ -448,6 +461,10 @@
                     <plugin>
                         <groupId>com.github.github</groupId>
                         <artifactId>site-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
