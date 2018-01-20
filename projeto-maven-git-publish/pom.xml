@@ -7,6 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>projeto-maven-git-publish</artifactId>
+    <name>GIT - Pom Publicação</name>
     <packaging>pom</packaging>
     <profiles>
         <profile>
@@ -50,5 +51,4 @@
             <type>pom</type>
         </dependency>
     </dependencies>
-    <name>GIT - Pom Publicação</name>
 </project>
